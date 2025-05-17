@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>فروشگاه همسر محمد</title>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Vazirmatn', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f8f8;
+      direction: rtl;
+    }
+    header {
+      background-color: #ff69b4;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      font-size: 1.5rem;
+    }
+    nav {
+      background-color: #fff;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding: 1rem;
+    }
+    nav a {
+      text-decoration: none;
+      color: #333;
+      padding: 0.5rem 1rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background-color: #fafafa;
+    }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+      padding: 1rem;
+    }
+    .product {
+      background-color: #fff;
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .product img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    .order-btn {
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      margin-top: 0.5rem;
+      cursor: pointer;
+    }
+    footer {
+      background-color: #eee;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>فروشگاه لباس</header>
+  <nav>
+    <a href="#shawls">شال</a>
+    <a href="#scarves">روسری</a>
+    <a href="#mantos">مانتو</a>
+    <a href="#pants">شلوار</a>
+  </nav>
+
+  <section id="shawls" class="products">
+    <div class="product">
+      <img src="https://via.placeholder.com/200x250.png?text=%D8%B4%D8%A7%D9%84" alt="شال">
+      <h3>شال نخی صورتی</h3>
+      <p>قیمت: ۱۲۰٬۰۰۰ تومان</p>
+      <button class="order-btn" onclick="orderViaWhatsApp('شال نخی صورتی')">سفارش در واتساپ</button>
+    </div>
+    <!-- محصولات دیگر شال -->
+  </section>
+
+  <section id="scarves" class="products">
+    <!-- محصولات روسری -->
+  </section>
+
+  <section id="mantos" class="products">
+    <!-- محصولات مانتو -->
+  </section>
+
+  <section id="pants" class="products">
+    <!-- محصولات شلوار -->
+  </section>
+
+  <footer>
+    <p>تماس در <a href="https://instagram.com/YOUR_INSTAGRAM" target="_blank">اینستاگرام</a> | طراحی شده توسط محمد</p>
+  </footer>
+
+  <script>
+    function orderViaWhatsApp(productName) {
+      const phone = "YOUR_PHONE_NUMBER"; // شماره واتساپ
+      const message = `سلام، من مایلم محصول «${productName}» رو سفارش بدم.`;
+      const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+      window.open(url, '_blank');
+    }
+  </script>
+</body>
+</html>
