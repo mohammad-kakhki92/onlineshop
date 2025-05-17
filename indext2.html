@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>فروشگاه آنلاین</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: sans-serif;
+      direction: rtl;
+    }
+    body {
+      margin: 0;
+      background-color: #f8f8f8;
+    }
+    header {
+      background-color: #e91e63;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      font-size: 1.5rem;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      background-color: #fff;
+      padding: 1rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    nav button {
+      background-color: #e91e63;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      border-radius: 0.5rem;
+      transition: background-color 0.3s;
+    }
+    nav button:hover {
+      background-color: #c2185b;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+      padding: 1rem;
+    }
+    .item {
+      background-color: white;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease-in-out;
+    }
+    .item:hover {
+      transform: scale(1.03);
+    }
+    .item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: opacity 0.5s ease;
+    }
+    .item h3 {
+      margin: 0;
+      padding: 0.5rem;
+      text-align: center;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #fff;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+  <header>فروشگاه فاطمه</header>
+
+  <nav>
+    <button onclick="filterItems('all')">همه</button>
+    <button onclick="filterItems('shawl')">شال</button>
+    <button onclick="filterItems('scarf')">روسری</button>
+    <button onclick="filterItems('mantoo')">مانتو</button>
+    <button onclick="filterItems('pants')">شلوار</button>
+  </nav>
+
+  <div class="gallery" id="gallery">
+    <!-- نمونه کالا -->
+    <div class="item shawl">
+      <img src="https://via.placeholder.com/300x400?text=%D8%B4%D8%A7%D9%84" alt="شال">
+      <h3>شال نخی</h3>
+    </div>
+    <div class="item scarf">
+      <img src="https://via.placeholder.com/300x400?text=%D8%B1%D9%88%D8%B3%D8%B1%DB%8C" alt="روسری">
+      <h3>روسری ساتن</h3>
+    </div>
+    <div class="item mantoo">
+      <img src="https://via.placeholder.com/300x400?text=%D9%85%D8%A7%D9%86%D8%AA%D9%88" alt="مانتو">
+      <h3>مانتو تابستانی</h3>
+    </div>
+    <div class="item pants">
+      <img src="https://via.placeholder.com/300x400?text=%D8%B4%D9%84%D9%88%D8%A7%D8%B1" alt="شلوار">
+      <h3>شلوار جین</h3>
+    </div>
+  </div>
+
+  <footer>
+    © تمامی حقوق متعلق به فروشگاه فاطمه می‌باشد.
+  </footer>
+
+  <script>
+    function filterItems(category) {
+      const items = document.querySelectorAll('.item');
+      items.forEach(item => {
+        if (category === 'all' || item.classList.contains(category)) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
